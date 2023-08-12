@@ -1,9 +1,9 @@
-h1, h2, h3, h4, h5 {
+.text {
     font-weight: 200;
     color: var(--tg-theme-text-color);
 }
 
-p {
+.hint {
     font-weight: 200;
     color: var(--tg-theme-hint-color)
 }
@@ -12,7 +12,7 @@ body {
     background: var(--tg-theme-secondary-bg-color)
 }
 
-.container {
+.bg {
     background: var(--tg-theme-bg-color);
     border-radius: 10px;
     padding: 5px;
