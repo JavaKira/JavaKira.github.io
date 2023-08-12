@@ -1,0 +1,82 @@
+h1, h2, h3, h4, h5 {
+    font-weight: 200;
+    color: var(--tg-theme-text-color);
+}
+
+p {
+    font-weight: 200;
+    color: var(--tg-theme-hint-color)
+}
+
+body {
+    background: var(--tg-theme-secondary-bg-color)
+}
+
+.container {
+    background: var(--tg-theme-bg-color);
+    border-radius: 10px;
+    padding: 5px;
+    display: grid;
+}
+
+.container2 {
+    background: var(--tg-theme-bg-color);
+    grid-template-columns: 1fr 2.5fr;
+    border-radius: 10px;
+    display: grid;
+}
+
+.headerGrid {
+    background: var(--tg-theme-bg-color);
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 10px;
+    display: grid;
+}
+
+div {
+    position: relative;
+}
+
+.button {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: var(--tg-theme-button-color);
+    font-weight: 200;
+    color: var(--tg-theme-button-text-color);
+    padding: 8px 16px;
+}
+
+.btnExpanded {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: var(--tg-theme-button-color);
+    font-weight: 200;
+    color: var(--tg-theme-button-text-color);
+    padding: 8px 16px;
+    width: 100%;
+    display: block;
+}
+
+.avatar {
+    width: 128px;
+    height: 128px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.avatarSmall {
+    width: 84px;
+    height: 84px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.el {
+    padding: 15px 35px;
+}

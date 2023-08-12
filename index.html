@@ -1,1 +1,61 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+<div class="container">
+    <div class="headerGrid">
+        <div class="el">
+            <form action="https://5.253.61.170/orders.html">
+                <input class="btnExpanded" type="submit" value="Заказы" />
+            </form>
+        </div>
+        <div class="el">
+            <form action="https://5.253.61.170/chats.html">
+                <input class="btnExpanded" type="submit" value="Чаты" />
+            </form>
+        </div>
+        <div class="el">
+            <button class="btnExpanded">Я заказчик</button>
+        </div>
+    </div>
+</div>
+
+<h1>Чаты</h1>
+
+<div class="container">
+    <div class="container2">
+        <div class="el">
+            <img class="avatar" src="https://yt3.googleusercontent.com/ytc/AGIKgqNVH4fYdH6c-pMZ-sUSCRsOmAeKe7S4Xx6bvW22=s900-c-k-c0x00ffffff-no-rj">
+        </div>
+
+        <div class="el">
+            <h3>Имя профиля, 18 лет</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Tincidunt ornare massa eget egestas. Nisi lacus sed viverra tellus in. Odio eu feugiat pretium nibh ipsum consequat.</p>
+        </div>
+    </div>
+
+    <div class="el">
+        <h3>Информация по вашим задачам</h3>
+        <p>Выполнено заказов: <b>0</b></p>
+        <p>Ожидают выполнения: <b>0</b></p>
+        <p>Завершены: <b>0</b></p>
+    </div>
+
+    <div class="el">
+        <h3>Информация по вашим балансам</h3>
+        <p>Доступный баланс: <b>0 USDT</b></p>
+        <p>Замороженый баланс: <b>0 USDT</b></p>
+
+        <button class="button">Пополнить баланс</button>
+    </div>
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js">
+    let tg = window.Telegram.WebApp
+    tg.expand()
+</script>
+</body>
+</html>
