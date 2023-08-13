@@ -5,10 +5,6 @@
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-    <script src="https://telegram.org/js/telegram-web-app.js">
-        let tg = window.Telegram.WebApp
-        tg.expand()
-    </script>
 </head>
 <body>
     <h1 class="text">Заказы</h1>
@@ -24,5 +20,16 @@
         <h3 class="text">Название заказа 2</h3>
         <p class="hint">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean pharetra magna ac placerat vestibulum lectus mauris. Et odio pellentesque diam volutpat commodo sed egestas egestas. Tristique magna sit amet purus gravida. Fermentum leo vel orci porta non pulvinar neque laoreet.</p>
     </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        tg.expand();
+        tg.BackButton.show();
+        tg.BackButton.onClick(() => {
+            window.history.go(-1);
+            tg.BackButton.hide();
+        });
+    </script>
 </body>
 </html>
