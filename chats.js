@@ -4,7 +4,7 @@ function addChat(id, avatarUrl, title, lastMessage) {
         `<div class="bg" onclick="openChat(` + id + `)">
             <div class="container2">
                 <div class="el">
-                    <img class="avatarSmall" src="https://yt3.googleusercontent.com/ytc/AGIKgqNVH4fYdH6c-pMZ-sUSCRsOmAeKe7S4Xx6bvW22=s900-c-k-c0x00ffffff-no-rj">
+                    <img class="avatarSmall" src="https://yt3.googleusercontent.com/ytc/AGIKgqNVH4fYdH6c-pMZ-sUSCRsOmAeKe7S4Xx6bvW22=s900-c-k-c0x00ffffff-no-rj" alt="">
                 </div>
                 <div class="el">
                     <h3 class="text">` + title + `</h3>
