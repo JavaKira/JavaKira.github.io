@@ -36,14 +36,6 @@
     </div>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        tg.expand();
-        tg.BackButton.show();
-        tg.BackButton.onClick(() => {
-            window.history.go(-1);
-            tg.BackButton.hide();
-        });
-    </script>
+    <script src="chats.js"></script>
 </body>
 </html>
