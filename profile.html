@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+    <div class="bg">
+        <div class="headerGrid">
+            <div class="el">
+                <form action="/orders">
+                    <input class="btnExpanded" type="submit" value="Заказы" />
+                </form>
+            </div>
+            <div class="el">
+                <form action="/chats">
+                    <input class="btnExpanded" type="submit" value="Чаты" />
+                </form>
+            </div>
+            <div class="el">
+                <form action="/about">
+                    <input class="btnExpanded" type="submit" value="О нас" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text">Профиль</h1>
+
+    <div class="bg">
+        <div class="container2">
+            <div class="el">
+                <img class="avatar" id="avatar" src="https://yt3.googleusercontent.com/ytc/AGIKgqNVH4fYdH6c-pMZ-sUSCRsOmAeKe7S4Xx6bvW22=s900-c-k-c0x00ffffff-no-rj">
+            </div>
+
+            <div class="el">
+                <h3 class="text" id="profileTitle">Имя профиля, 18 лет</h3>
+                <p class="hint" id="profileDescription">Описание профиля</p>
+            </div>
+        </div>
+
+        <div class="el">
+            <h3 class="text">Информация по вашим задачам</h3>
+            <p class="hint">Ожидают исполнения: <b id="ongoingFulfillOrders">0</b></p>
+            <p class="hint">Ожидают выполнения: <b id="ongoingExecuteOrders">0</b></p>
+            <p class="hint">Завершены: <b id="executedOrders">0</b></p>
+        </div>
+
+        <div class="el">
+            <h3 class="text">Информация по вашим балансам</h3>
+            <p class="hint">Доступный баланс: <b id="balance">0</b><b> USDT</b></p>
+            <p class="hint">Замороженый баланс: <b id="frozenBalance">0</b><b> USDT</b></p>
+
+            <button class="button">Пополнить баланс</button>
+        </div>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
