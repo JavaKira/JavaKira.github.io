@@ -5,6 +5,6 @@ tg.BackButton.onClick(() => {
     window.history.go(-1);
 });
 
-document.getElementById("test").onclick(() => {
+function open() {
     window.open("https://t.me/TestNaProesd_bot/TestShortName", "_self")
-})
+}
