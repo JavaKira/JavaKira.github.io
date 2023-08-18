@@ -8,4 +8,8 @@ async function userName(id) {
     return users[userName];
 }
 
-export {userName}
+function test() {
+    return sql;
+}
+
+export {userName, test}

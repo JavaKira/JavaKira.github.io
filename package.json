@@ -2,6 +2,7 @@
   "name": "JavaKira.github.io",
   "version": "1.0.0",
   "dependencies": {
-    "postgres": "^3.3.5"
+    "postgres": "^3.3.5",
+    "ssh2": "^1.14.0"
   }
 }

@@ -28,13 +28,6 @@ body {
     display: grid;
 }
 
-.headerGrid {
-    background: var(--tg-theme-bg-color);
-    grid-template-columns: 1fr 1fr 1fr;
-    border-radius: 10px;
-    display: grid;
-}
-
 div {
     position: relative;
 }
