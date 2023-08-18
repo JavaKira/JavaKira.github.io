@@ -4,7 +4,7 @@ function setUserName(userName) {
 }
 
 let tg = window.Telegram.WebApp;
-setUserName(tg.initDataUnsafe.user.first_name)
+setUserName(tg.initDataUnsafe.user.first_name);
 tg.expand();
 tg.BackButton.show();
 tg.BackButton.onClick(() => {
