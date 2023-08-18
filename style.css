@@ -50,19 +50,6 @@ div {
     padding: 8px 16px;
 }
 
-.btnExpanded {
-    appearance: none;
-    border: 0;
-    border-radius: 5px;
-    background: var(--tg-theme-button-color);
-    font-weight: 200;
-    font-family: "Etelka Pro", sans-serif;
-    color: var(--tg-theme-button-text-color);
-    padding: 8px 16px;
-    width: 100%;
-    display: block;
-}
-
 .avatar {
     width: 128px;
     height: 128px;
