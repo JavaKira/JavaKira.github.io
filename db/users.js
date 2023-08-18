@@ -9,7 +9,7 @@ async function userName(id) {
 }
 
 function test() {
-    return sql;
+    return "test";
 }
 
 export {userName, test}
