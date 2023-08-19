@@ -1,15 +1,15 @@
 import sql from './db.js'
 
-async function userName(id) {
-    const users = await sql`
-        SELECT
-    `
-
-    return users[userName];
-}
+// async function userName(id) {
+//     const users = await sql`
+//         SELECT
+//     `
+//
+//     return users[userName];
+// }
 
 function test() {
-    return "test";
+    return sql`select version()`
 }
 
-export {userName, test}
+export {test}
