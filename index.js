@@ -1,4 +1,4 @@
-import * as users from "db/users"
+import * as users from "./db/users.js"
 
 function setUserName(userName) {
     const userNameSpan = document.getElementById("userName");
