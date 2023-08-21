@@ -25,6 +25,6 @@ jobs:
         password: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-          cd ~/home/javakira/freelancewebapp/JavaKira.github.io
+          cd /home/javakira/freelancewebapp/JavaKira.github.io
           git pull origin master
           git status
