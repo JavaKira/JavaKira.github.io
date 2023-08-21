@@ -3,6 +3,7 @@ import routing from './routing/index.js';
 
 
 let server = new http.Server(function(req, res) {
+    console.log("request");
     let jsonString = '';
     res.setHeader('Content-Type', 'application/json');
     req.on('data', (data) => {
@@ -13,4 +14,7 @@ let server = new http.Server(function(req, res) {
         routing.define(req, res, jsonString);
     });
 });
-server.listen(8000, 'localhost');
+
+server.listen(8000, 'localhost', () => {
+    console.log(`Server running at localhost:8000`);
+});
