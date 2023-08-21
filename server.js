@@ -1,5 +1,5 @@
 import http from 'http';
-import routing from './routing';
+import routing from './routing/index.js';
 
 
 let server = new http.Server(function(req, res) {
