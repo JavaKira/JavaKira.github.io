@@ -1,7 +1,6 @@
 {
   "name": "JavaKira.github.io",
   "version": "1.0.0",
-  "type": "module",
   "dependencies": {
     "express": "^4.18.2",
     "postgres": "^3.3.5"
