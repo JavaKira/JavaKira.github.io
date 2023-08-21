@@ -16,6 +16,6 @@ routes.forEach(route => {
     })
 })
 
-app.listen(8000, 'localhost', () => {
-    console.log(`Server running at localhost:8000`);
+app.listen(8000, '5.253.61.170', () => {
+    console.log(`Server running at 5.253.61.170:8000`);
 });
