@@ -17,6 +17,10 @@ routes.forEach(route => {
     })
 })
 
-https.createServer(app).listen(8000, "5.253.61.170", () => {
-    console.log("server is running at port 4000")
+app.listen(80, "5.253.61.170", () => {
+    console.log("http is running at https://5.253.61.170:80")
+});
+
+https.createServer(app).listen(443, "localhost", () => {
+    console.log("https is running at https://5.253.61.170:443")
 });
