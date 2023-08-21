@@ -1,20 +1,12 @@
-import http from 'http';
-import routing from './routing/index.js';
+const express = require('express')
+const app = express()
 
+app.use(express.static('public'))
 
-let server = new http.Server(function(req, res) {
-    console.log("request");
-    let jsonString = '';
-    res.setHeader('Content-Type', 'application/json');
-    req.on('data', (data) => {
-        jsonString += data;
-    });
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html')
+})
 
-    req.on('end', () => {
-        routing.define(req, res, jsonString);
-    });
-});
-
-server.listen(8000, 'localhost', () => {
+app.listen(8000, 'localhost', () => {
     console.log(`Server running at localhost:8000`);
 });
