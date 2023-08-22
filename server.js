@@ -19,12 +19,12 @@ routes.forEach(route => {
 })
 
 app.listen(80, "5.253.61.170", () => {
-    console.log("http is running at https://5.253.61.170:80")
+    console.log("http is running at http://5.253.61.170:80")
 });
 
 https.createServer({
     key: fs.readFileSync("privkey.pem"),
-    cert: fs.readFileSync("cert.pem"),
+    cert: fs.readFileSync("fullchain.pem"),
 }, app).listen(443, "localhost", () => {
     console.log("https is running at https://5.253.61.170:443")
 });
