@@ -25,6 +25,6 @@ app.listen(80, "5.253.61.170", () => {
 https.createServer({
     key: fs.readFileSync("privkey.pem"),
     cert: fs.readFileSync("fullchain.pem"),
-}, app).listen(443, "localhost", () => {
+}, app).listen(443, "5.253.61.170", () => {
     console.log("https is running at https://5.253.61.170:443")
 });
