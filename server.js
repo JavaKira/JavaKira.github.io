@@ -1,5 +1,6 @@
 const express = require("express");
 const https = require("https");
+const fs = require("fs");
 
 const app = express();
 
@@ -21,6 +22,9 @@ app.listen(80, "5.253.61.170", () => {
     console.log("http is running at https://5.253.61.170:80")
 });
 
-https.createServer(app).listen(443, "localhost", () => {
+https.createServer({
+    key: fs.readFileSync("privkey.pem"),
+    cert: fs.readFileSync("cert.pem"),
+}, app).listen(443, "localhost", () => {
     console.log("https is running at https://5.253.61.170:443")
 });
