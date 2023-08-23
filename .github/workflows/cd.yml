@@ -28,3 +28,5 @@ jobs:
           cd /home/javakira/freelancewebapp/JavaKira.github.io
           git pull origin master
           git status
+          pkill node
+          node server.js
