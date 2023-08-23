@@ -29,4 +29,4 @@ jobs:
           git pull origin master
           git status
           pkill node
-          node server.js
+          nohup node server.js
