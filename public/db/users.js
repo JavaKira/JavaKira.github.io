@@ -1,4 +1,4 @@
-import sql from './db.js'
+const sql = require("./db.js");
 
 // async function userName(id) {
 //     const users = await sql`
@@ -12,4 +12,4 @@ function test() {
     return sql`select version()`
 }
 
-export {test}
+module.exports.test = test;
