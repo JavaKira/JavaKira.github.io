@@ -18,6 +18,12 @@ routes.forEach(route => {
     })
 })
 
+app.get("/api/test", (req, res) => {
+    res.end(JSON.stringify({
+        text: "test"
+    }));
+})
+
 app.listen(80, "5.253.61.170", () => {
     console.log("http is running at http://5.253.61.170:80")
 });

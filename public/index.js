@@ -1,10 +1,10 @@
-const users = require("./db/users.js");
-
 function setUserName(userName) {
     const userNameSpan = document.getElementById("userName");
     userNameSpan.innerText = userName;
 }
 
+fetch("api/test")
+    .then(res => setUserName(response.text()))
+
 let tg = window.Telegram.WebApp;
-setUserName(users.test());
 tg.expand();
