@@ -4,7 +4,7 @@ function setUserName(userName) {
 }
 
 fetch("api/test")
-    .then(res => setUserName(response.text()))
+    .then(res => setUserName(res.text()))
 
 let tg = window.Telegram.WebApp;
 tg.expand();
