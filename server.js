@@ -22,9 +22,7 @@ routes.forEach(route => {
 app.get("/api/user/:id", (req, res) => {
     const id = req.params.id;
     db.getUser(id).then(result => {
-        res.end(JSON.stringify({
-            name: `${result["name"]}`
-        }));
+        res.end(result);
     })
 })
 
