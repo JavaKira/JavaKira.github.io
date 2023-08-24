@@ -1,6 +1,7 @@
 const express = require("express");
 const https = require("https");
 const fs = require("fs");
+const db = require("./db/db.js")
 
 const app = express();
 
@@ -20,7 +21,7 @@ routes.forEach(route => {
 
 app.get("/api/test", (req, res) => {
     res.end(JSON.stringify({
-        text: "test"
+        text: db.getUser(1)
     }));
 })
 
