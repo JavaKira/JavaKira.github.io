@@ -22,7 +22,7 @@ routes.forEach(route => {
 app.get("/api/test", (req, res) => {
     db.getUser(1).then(result => {
         res.end(JSON.stringify({
-            text: `${result.toString()}`
+            text: `${result[0]["name"]}`
         }));
     })
 })
