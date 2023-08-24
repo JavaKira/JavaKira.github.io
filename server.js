@@ -22,7 +22,8 @@ routes.forEach(route => {
 app.get("/api/user/:id", (req, res) => {
     const id = req.params.id;
     db.getUser(id).then(result => {
-        res.end(result);
+        console.log(result)
+        res.send(result);
     })
 })
 
