@@ -21,7 +21,7 @@ routes.forEach(route => {
 
 app.get("/api/test", (req, res) => {
     res.end(JSON.stringify({
-        text: db.getUser(1)
+        text: `${db.getUser(1)}`
     }));
 })
 
