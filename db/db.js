@@ -12,7 +12,7 @@ const sql = postgres(URL, {ssl: 'require'});
 async function getUser(id) {
     return await sql`SELECT *
                FROM users
-               WHERE user_id = ${id}`[0];
+               WHERE user_id = ${id}`;
 }
 
 module.exports.getUser = getUser;
