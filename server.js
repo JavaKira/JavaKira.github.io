@@ -19,10 +19,11 @@ routes.forEach(route => {
     })
 })
 
-app.get("/api/test", (req, res) => {
-    db.getUser(1).then(result => {
+app.get("/api/user/:id", (req, res) => {
+    const id = req.params.id;
+    db.getUser(id).then(result => {
         res.end(JSON.stringify({
-            text: `${result[0]["name"]}`
+            name: `${result["name"]}`
         }));
     })
 })

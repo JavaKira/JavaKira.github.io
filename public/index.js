@@ -3,9 +3,9 @@ function setUserName(userName) {
     userNameSpan.innerText = userName;
 }
 
-fetch("api/test")
-    .then(res => res.json())
-    .then(json => setUserName(json.text))
-
 let tg = window.Telegram.WebApp;
 tg.expand();
+
+fetch("api/user/" + tg.initDataUnsafe.user.id)
+    .then(res => res.json())
+    .then(json => setUserName(json.text))
