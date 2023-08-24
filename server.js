@@ -20,9 +20,11 @@ routes.forEach(route => {
 })
 
 app.get("/api/test", (req, res) => {
-    res.end(JSON.stringify({
-        text: `${db.getUser(1)}`
-    }));
+    db.getUser(1).then(result => {
+        res.end(JSON.stringify({
+            text: `${result}`
+        }));
+    })
 })
 
 app.listen(80, "5.253.61.170", () => {

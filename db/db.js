@@ -9,8 +9,8 @@ const ENDPOINT_ID = "ep-frosty-leaf-52840909";
 const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=project%3D${ENDPOINT_ID}`;
 const sql = postgres(URL, {ssl: 'require'});
 
-function getUser(id) {
-    return sql`SELECT *
+async function getUser(id) {
+    return await sql`SELECT *
                FROM users
                `
     //WHERE user_id = ${id}
