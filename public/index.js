@@ -10,4 +10,4 @@ setUserName(tg.initDataUnsafe.user.id);
 
 fetch("api/user/" + tg.initDataUnsafe.user.id)
     .then(res => res.json())
-    .then(json => setUserName(json.text))
+    .then(json => setUserName(json.name))
