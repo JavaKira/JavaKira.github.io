@@ -10,9 +10,10 @@ const URL = `postgres://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}?options=
 const sql = postgres(URL, {ssl: 'require'});
 
 async function getUser(id) {
-    return await sql`SELECT *
+    const result = await sql`SELECT *
                FROM users
                WHERE user_id = ${id}`;
+    return result[0];
 }
 
 module.exports.getUser = getUser;
