@@ -1,7 +1,7 @@
 const postgres = require("postgres");
 
-const URL = `postgresql://latand:google1993google@185.51.121.57:5432/freelance`;
-const sql = postgres(URL, {ssl: 'require'});
+const URL = `postgres://latand:google1993google@185.51.121.57:5432/freelance`;
+const sql = postgres(URL);
 
 async function getUser(id) {
     const result = await sql`SELECT *
