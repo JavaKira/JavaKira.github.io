@@ -22,7 +22,6 @@ routes.forEach(route => {
 app.get("/api/user/:id", (req, res) => {
     const id = req.params.id;
     db.getUser(id).then(result => {
-        console.log(result);
         res.status(200).send(result);
     }).catch(err => {
         res.status(400).send(err);

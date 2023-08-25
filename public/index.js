@@ -1,6 +1,10 @@
 let tg = window.Telegram.WebApp;
 tg.expand();
 
+function setUser(user) {
+    setUserName(user.name)
+}
+
 function setUserName(userName) {
     const userNameSpan = document.getElementById("userName");
     userNameSpan.innerText = userName;
@@ -15,7 +19,7 @@ function wrongUser() {
 fetch("api/user/" + tg.initDataUnsafe.user.id)
     .then(res => {
         if (res.status === 200)
-            return res.json().then(json => setUserName(json.name))
+            return res.json().then(json => setUser(json))
         else
             wrongUser();
     });
