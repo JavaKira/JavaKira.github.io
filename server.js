@@ -30,6 +30,7 @@ app.get("/api/user/:id", (req, res) => {
 })
 
 app.get("/api/file/:id", (req, res) => {
+    console.log("/api/file/:id")
     const id = req.params.id;
     console.log(id);
     console.log(process.env.BOT_TOKEN);
