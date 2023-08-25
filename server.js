@@ -34,11 +34,12 @@ app.get("/api/file/:id", (req, res) => {
     const id = req.params.id;
     console.log(id);
     console.log(process.env.BOT_TOKEN);
-    fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/getFile?file_id=${id}`)
-        .then(response => {
-            console.log(response);
-            res.status(200).send(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${response.file_path}`);
-        })
+    res.status(200).send(process.env.BOT_TOKEN);
+    // fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/getFile?file_id=${id}`)
+    //     .then(response => {
+    //         console.log(response);
+    //         res.status(200).send(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${response.file_path}`);
+    //     })
 });
 
 app.listen(process.env.HTTP_PORT, process.env.HOSTNAME, () => {
