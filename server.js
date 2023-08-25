@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const https = require("https");
 const fs = require("fs");
@@ -28,13 +29,21 @@ app.get("/api/user/:id", (req, res) => {
     })
 })
 
-app.listen(80, "5.253.61.170", () => {
-    console.log("http is running at http://5.253.61.170:80")
+app.get("/api/photo/:id", (req, res) => {
+    const id = req.params.id;
+    fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/getFile?file_id=${id}`)
+        .then(response => {
+            res.status(200).send(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${response.file_path}`);
+        })
+});
+
+app.listen(process.env.HTTP_PORT, process.env.HOSTNAME, () => {
+    console.log(`http is running at http://${process.env.HOSTNAME}:${process.env.HTTP_PORT}`)
 });
 
 https.createServer({
     key: fs.readFileSync("privkey.pem"),
     cert: fs.readFileSync("fullchain.pem"),
-}, app).listen(443, "5.253.61.170", () => {
-    console.log("https is running at https://5.253.61.170:443")
+}, app).listen(process.env.HTTPS_PORT, process.env.HOSTNAME, () => {
+    console.log(`https is running at https://${process.env.HOSTNAME}:${process.env.HTTPS_PORT}`)
 });

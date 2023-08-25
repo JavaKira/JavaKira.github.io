@@ -1,7 +1,7 @@
+require("dotenv").config();
 const postgres = require("postgres");
 
-const URL = `postgres://latand:google1993google@185.51.121.57:5432/freelance`;
-const sql = postgres(URL);
+const sql = postgres(process.env.DB_CONN);
 
 async function getUser(id) {
     const result = await sql`SELECT *
