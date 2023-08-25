@@ -7,7 +7,6 @@ function setUserName(userName) {
 }
 
 function wrongUser() {
-    document.getElementById("body").style.display = "none";
     tg.showPopup({
         title: "Ошибка",
         message: "Для пользования нашей биржей необходимо будет заполнить анкету. Вернитесь в бота и используйте /start",
