@@ -24,7 +24,7 @@ app.get("/api/user/:id", (req, res) => {
     db.getUser(id).then(result => {
         res.status(200).send(result);
     }).catch(err => {
-        res.status(400).send(err);
+        res.status(400).send(err.message);
     })
 })
 
