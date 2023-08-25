@@ -31,8 +31,8 @@ app.get("/api/user/:id", (req, res) => {
 
 app.get("/api/file/:id", (req, res) => {
     const id = req.params.id;
-    console.log(process.env.BOT_TOKEN);
     console.log(id);
+    console.log(process.env.BOT_TOKEN);
     fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/getFile?file_id=${id}`)
         .then(response => {
             console.log(response);
