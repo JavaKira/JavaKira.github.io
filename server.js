@@ -30,11 +30,15 @@ app.get("/api/user/:id", (req, res) => {
 })
 
 app.get("/api/file/:id", (req, res) => {
-    console.log("/api/file/:id")
-    const id = req.params.id;
-    console.log(id);
-    console.log(process.env.BOT_TOKEN);
-    res.status(200).send(process.env.BOT_TOKEN);
+    try {
+        console.log("/api/file/:id")
+        const id = req.params.id;
+        console.log(id);
+        console.log(process.env.BOT_TOKEN);
+        res.status(200).send(process.env.BOT_TOKEN);
+    } catch (e) {
+        res.status(200).send(e.message);
+    }
     // fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/getFile?file_id=${id}`)
     //     .then(response => {
     //         console.log(response);
