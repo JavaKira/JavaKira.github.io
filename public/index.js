@@ -2,7 +2,7 @@ let tg = window.Telegram.WebApp;
 tg.expand();
 
 function setUser(user) {
-    setUserName(user.name)
+    setUserName(user.tg_full_name)
 }
 
 function setUserName(userName) {
