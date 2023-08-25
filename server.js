@@ -29,10 +29,13 @@ app.get("/api/user/:id", (req, res) => {
     })
 })
 
-app.get("/api/photo/:id", (req, res) => {
+app.get("/api/file/:id", (req, res) => {
     const id = req.params.id;
+    console.log(process.env.BOT_TOKEN);
+    console.log(id);
     fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/getFile?file_id=${id}`)
         .then(response => {
+            console.log(response);
             res.status(200).send(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${response.file_path}`);
         })
 });

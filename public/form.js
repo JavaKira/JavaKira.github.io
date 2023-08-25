@@ -37,7 +37,7 @@ fetch("api/user/" + tg.initDataUnsafe.user.id)
     .then(res => {
         if (res.status === 200) {
             res.json().then(user => {
-                fetch("api/photo/" + user.prof_photo_id).then(photoLink => {
+                fetch("api/file/" + user.prof_photo_id).then(photoLink => {
                     setUser(user, photoLink);
                 })
             })
