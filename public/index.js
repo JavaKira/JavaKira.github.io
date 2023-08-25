@@ -9,10 +9,9 @@ function setUserName(userName) {
 function wrongUser() {
     tg.showPopup({
         title: "Ошибка",
-        message: "Вы не зарегестрировали анкету!",
+        message: "Для пользования нашей биржей необходимо будет заполнить анкету. Вернитесь в бота и используйте /start",
         buttons: [
             {
-                text: "Вернуться в бота",
                 type: "close"
             }
         ]
