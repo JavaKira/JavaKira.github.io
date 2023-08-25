@@ -7,14 +7,8 @@ function setUserName(userName) {
 }
 
 function wrongUser() {
-    tg.showPopup({
-        title: "Ошибка",
-        message: "Для пользования нашей биржей необходимо будет заполнить анкету. Вернитесь в бота и используйте /start",
-        buttons: [
-            {
-                type: "close"
-            }
-        ]
+    tg.showAlert("Для пользования нашей биржей необходимо будет заполнить анкету. Вернитесь в бота и используйте /start", () => {
+        tg.close();
     });
 }
 
