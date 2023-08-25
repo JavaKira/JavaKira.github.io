@@ -1,3 +1,10 @@
+let tg = window.Telegram.WebApp;
+tg.expand();
+tg.BackButton.show();
+tg.BackButton.onClick(() => {
+    window.history.go(-1);
+});
+
 const avatarImg = document.getElementById("avatar");
 const profileTitleText = document.getElementById("profileTitle");
 const profileDescriptionText = document.getElementById("profileDescription");
@@ -7,38 +14,30 @@ const executedOrdersText = document.getElementById("executedOrders");
 const balanceText = document.getElementById("balance");
 const frozenBalanceText = document.getElementById("frozenBalance");
 
-function setProfile(avatarUrl,
+function setForm(avatarUrl,
                     title,
                     description,
-                    ongoingFulfillOrders,
-                    ongoingExecuteOrders,
-                    executedOrders,
-                    balance,
-                    frozenBalance) {
+                    ongoingOrders,
+                    executedOrders) {
     avatarImg.src = avatarUrl;
     profileTitleText.innerText = title;
     profileDescriptionText.innerText = description;
-    ongoingFulfillOrdersText.innerText = ongoingFulfillOrders;
-    ongoingExecuteOrdersText.innerText = ongoingExecuteOrders;
+    ongoingExecuteOrdersText.innerText = ongoingOrders;
     executedOrdersText.innerText = executedOrders;
-    balanceText.innerText = balance;
-    frozenBalanceText.innerText = frozenBalance;
 }
 
-setProfile(
-    "https://yt3.googleusercontent.com/ytc/AGIKgqNVH4fYdH6c-pMZ-sUSCRsOmAeKe7S4Xx6bvW22=s900-c-k-c0x00ffffff-no-rj",
-    "Имя профиля, 18 лет",
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Tincidunt ornare massa eget egestas. Nisi lacus sed viverra tellus in. Odio eu feugiat pretium nibh ipsum consequat.",
-    "1",
-    "0",
-    "0",
-    "100",
-    "0"
-)
+function setUser(user) {
+    setForm(
+        "https://yt3.googleusercontent.com/ytc/AGIKgqNVH4fYdH6c-pMZ-sUSCRsOmAeKe7S4Xx6bvW22=s900-c-k-c0x00ffffff-no-rj",
+        user.tg_full_name + ", " + user.age + ", " + user.city,
+            user.prof_about,
+            0,
+        0
+        )
+}
 
-let tg = window.Telegram.WebApp;
-tg.expand();
-tg.BackButton.show();
-tg.BackButton.onClick(() => {
-    window.history.go(-1);
-});
+fetch("api/user/" + tg.initDataUnsafe.user.id)
+    .then(res => {
+        if (res.status === 200)
+            return res.json().then(json => setUser(json))
+    });
