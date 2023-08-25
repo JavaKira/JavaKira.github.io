@@ -24,9 +24,10 @@ app.get("/api/user/:id", (req, res) => {
     db.getUser(id).then(result => {
         console.log(result);
         res.status(200).send(result);
-    }).catch(err =>
-        res.status(400)
-    )
+    }).catch(err => {
+        console.log(err);
+        res.status(400);
+    })
 })
 
 app.listen(80, "5.253.61.170", () => {
