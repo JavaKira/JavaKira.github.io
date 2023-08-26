@@ -7,17 +7,20 @@ tg.BackButton.onClick(() => {
 
 const avatarImg = document.getElementById("avatar");
 const profileTitleText = document.getElementById("profileTitle");
+const profileCityHint = document.getElementById("profileCity");
 const profileDescriptionText = document.getElementById("profileDescription");
 const ongoingExecuteOrdersText = document.getElementById("ongoingExecuteOrders");
 const executedOrdersText = document.getElementById("executedOrders");
 
 function setForm(avatarUrl,
                     title,
+                    city,
                     description,
                     ongoingOrders,
                     executedOrders) {
     avatarImg.src = avatarUrl;
     profileTitleText.innerText = title;
+    profileCityHint.innerText = city;
     profileDescriptionText.innerText = description;
     ongoingExecuteOrdersText.innerText = ongoingOrders;
     executedOrdersText.innerText = executedOrders;
@@ -26,7 +29,8 @@ function setForm(avatarUrl,
 function setUser(user) {
     setForm(
         `api/file/${user.prof_photo_id}`,
-        user.tg_full_name + ", " + user.age + ", " + user.city,
+        user.tg_full_name + ", " + user.age + " лет",
+        user.city,
             user.prof_about,
             0,
         0
