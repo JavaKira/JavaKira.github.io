@@ -39,7 +39,17 @@ app.get("/api/file/:id", (req, res) => {
         });
 
         response.on('end', () => {
-            res.status(200).send(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${JSON.parse(data).file_path}`)
+            https.get(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${JSON.parse(data).file_path}`, response => {
+                let data = '';
+
+                response.on('data', (chunk) => {
+                    data += chunk;
+                });
+
+                response.on('end', () => {
+                    res.status(200).sendFile(data);
+                });
+            })
         });
     })
 });
