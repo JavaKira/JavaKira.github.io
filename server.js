@@ -30,6 +30,7 @@ app.get("/api/user/:id", (req, res) => {
 });
 
 app.get("/api/file/:id", (req, res) => {
+    const id = req.params.id;
     https.get(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/getFile?file_id=${id}`, response => {
         let data = '';
 
