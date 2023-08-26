@@ -44,8 +44,6 @@ div {
 }
 
 .avatar {
-    width: 128px;
-    height: 128px;
     position: relative;
     top: 0;
     bottom: 0;
