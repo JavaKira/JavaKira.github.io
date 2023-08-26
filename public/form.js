@@ -23,9 +23,9 @@ function setForm(avatarUrl,
     executedOrdersText.innerText = executedOrders;
 }
 
-function setUser(user, photoLink) {
+function setUser(user) {
     setForm(
-        photoLink,
+        `api/file/${user.prof_photo_id}`,
         user.tg_full_name + ", " + user.age + ", " + user.city,
             user.prof_about,
             0,
@@ -36,10 +36,6 @@ function setUser(user, photoLink) {
 fetch("api/user/" + tg.initDataUnsafe.user.id)
     .then(res => {
         if (res.status === 200) {
-            res.json().then(user => {
-                fetch("api/file/" + user.prof_photo_id).then(photoLink => {
-                    setUser(user, photoLink);
-                })
-            })
+            res.json().then(user => setUser(user))
         }
     });

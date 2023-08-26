@@ -40,6 +40,7 @@ app.get("/api/file/:id", (req, res) => {
 
         response.on('end', () => {
             https.get(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${JSON.parse(data).result.file_path}`, response => {
+                res.setHeader("Content-Type", "image/jpeg");
                 response.pipe(res);
             })
         });
