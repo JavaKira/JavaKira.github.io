@@ -47,7 +47,7 @@ app.get("/api/file/:id", (req, res) => {
                 });
 
                 response.on('end', () => {
-                    res.status(200).sendFile(data);
+                    res.status(200).send(data);
                 });
             })
         });
