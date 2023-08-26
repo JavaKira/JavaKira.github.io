@@ -29,7 +29,7 @@ app.get("/api/user/:id", (req, res) => {
     })
 });
 
-app.get("/api/file/:id", (req, res) => {
+app.get("/api/file/", (req, res) => {
     res.status(200).send("test");
 });
 
