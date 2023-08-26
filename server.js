@@ -20,6 +20,10 @@ routes.forEach(route => {
     })
 });
 
+app.get("/api/file/:id", (req, res) => {
+    res.status(200).end("test");
+});
+
 app.get("/api/user/:id", (req, res) => {
     const id = req.params.id;
     db.getUser(id).then(result => {
@@ -27,10 +31,6 @@ app.get("/api/user/:id", (req, res) => {
     }).catch(err => {
         res.status(400).send(err.message);
     })
-});
-
-app.get("/api/file/", (req, res) => {
-    res.status(200).send("test");
 });
 
 app.listen(process.env.HTTP_PORT, process.env.HOSTNAME, () => {
