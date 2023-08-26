@@ -21,7 +21,7 @@ routes.forEach(route => {
 });
 
 app.get("/api/file/:id", (req, res) => {
-    res.status(200).end("test");
+    res.sendFile(__dirname + "/public/index.html");
 });
 
 app.get("/api/user/:id", (req, res) => {
