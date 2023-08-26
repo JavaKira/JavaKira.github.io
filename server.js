@@ -39,9 +39,7 @@ app.get("/api/file/:id", (req, res) => {
         });
 
         response.on('end', () => {
-            console.log(JSON.parse(data));
-            console.log(JSON.parse(data).file_path);
-            https.get(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${JSON.parse(data).file_path}`, response => {
+            https.get(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${JSON.parse(data).result.file_path}`, response => {
                 let data = '';
 
                 response.on('data', (chunk) => {
