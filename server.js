@@ -20,7 +20,7 @@ routes.forEach(route => {
     })
 });
 
-app.get("/api/file/:id", (req, res) => {
+app.get("/api/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
 });
 
