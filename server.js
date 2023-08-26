@@ -20,10 +20,6 @@ routes.forEach(route => {
     })
 });
 
-app.get("/api/", (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
-});
-
 app.get("/api/user/:id", (req, res) => {
     const id = req.params.id;
     db.getUser(id).then(result => {
@@ -31,6 +27,14 @@ app.get("/api/user/:id", (req, res) => {
     }).catch(err => {
         res.status(400).send(err.message);
     })
+});
+
+app.get("/api/file/:id", (req, res) => {
+    fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/getFile?file_id=${id}`)
+        .then(response => {
+            console.log(response);
+            res.status(200).send(`https://api.telegram.org/file/bot${process.env.BOT_TOKEN}/${response.file_path}`);
+        });
 });
 
 app.listen(process.env.HTTP_PORT, process.env.HOSTNAME, () => {
