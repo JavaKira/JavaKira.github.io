@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.static("public"));
 
-let routes = ["/profile", "/about", "/customer", "/customerProfile", "/form", "/freelancer", "/freelancerProfile", "/orders"];
+let routes = ["/profile", "/about", "/customer", "/customerProfile", "/form", "/freelancer", "/freelancerProfile", "/orders", "/takeOrder"];
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
@@ -23,6 +23,14 @@ routes.forEach(route => {
 app.get("/api/user/:id", (req, res) => {
     const id = req.params.id;
     db.getUser(id).then(result => {
+        res.status(200).send(result);
+    }).catch(err => {
+        res.status(400).send(err.message);
+    })
+});
+
+app.get("/api/services", (req, res) => {
+    db.getServices().then(result => {
         res.status(200).send(result);
     }).catch(err => {
         res.status(400).send(err.message);

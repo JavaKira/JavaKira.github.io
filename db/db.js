@@ -13,4 +13,10 @@ async function getUser(id) {
     return result[0];
 }
 
+async function getServices() {
+    return await sql`SELECT *
+                FROM services`;
+}
+
 module.exports.getUser = getUser;
+module.exports.getServices = getServices;
