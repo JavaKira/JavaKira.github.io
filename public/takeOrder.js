@@ -15,6 +15,7 @@ fetch("/api/services")
                     container.insertAdjacentHTML("beforeend",
                         `<div class="bg">
                                 <h3 class="text">${json[i].service_name}</h3>
+                                <p class="hint">${json[i].service_descript}</p>
                               </div>
                               <br>`
                     )
