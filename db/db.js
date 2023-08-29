@@ -18,5 +18,12 @@ async function getServices() {
                 FROM services`;
 }
 
+async function getTasks(service_name) {
+    return await sql`SELECT * 
+                FROM all_tasks
+                WHERE type_tasks = ${service_name}`
+}
+
 module.exports.getUser = getUser;
 module.exports.getServices = getServices;
+module.exports.getTasks = getTasks;
