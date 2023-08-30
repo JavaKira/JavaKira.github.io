@@ -10,7 +10,7 @@ tg.BackButton.onClick(() => {
 
 function insertService(service) {
     container.insertAdjacentHTML("beforeend",
-        `<div class="bg" onclick="redirect2ServicePage(${service.call_data})">
+        `<div class="bg" onclick="redirect2ServicePage('${service.call_data}')">
                                 <h3 class="text">${service.service_name}</h3>
                                 <p class="hint">${service.service_descript}</p>
                               </div>
