@@ -1,6 +1,7 @@
 const serviceHint = document.getElementById("service");
 const container = document.getElementById("container");
 const tg = window.Telegram.WebApp;
+const service = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 
 tg.expand();
 tg.BackButton.show();
@@ -11,9 +12,21 @@ tg.BackButton.onClick(() => {
 function insertTasks(task) {
     container.insertAdjacentHTML("beforeend",
         `<div class="bg">
-                                <h3 class="text">${service.service_name}</h3>
-                                <p class="hint">${service.service_descript}</p>
+                                <h3 class="text">${task.name_task}</h3>
+                                <p class="hint">${task.body_task}</p>
+                                <p class="hint">Срок: ${task.time_task}</p>
+                                <p class="hint">Вознаграждение: ${task.price_task}</p>
                               </div>
                               <br>`
     )
 }
+
+fetch(`/api/tasks/${service}`)
+    .then(res => {
+        if (res.status === 200)
+            res.json().then(json => {
+                for (let i = 0; i < json.length; i++) {
+                    insertTasks(json[i]);
+                }
+            });
+    });
