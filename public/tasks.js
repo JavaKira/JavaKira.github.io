@@ -16,6 +16,9 @@ function insertTasks(task) {
                                 <p class="hint">${task.body_task}</p>
                                 <p class="hint">Срок: ${task.time_task}</p>
                                 <p class="hint">Вознаграждение: ${task.price_task}</p>
+                                <button class="button">Отозваться</button>
+                                <br>
+                                <button class="button">Профиль заказчика</button>
                               </div>
                               <br>`
     )
