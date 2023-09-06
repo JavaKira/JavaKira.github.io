@@ -27,7 +27,7 @@ function insertTasks(task) {
 }
 
 function openProfile(userId) {
-    window.open(`/freelancer/tasks/${userId}`, "_self");
+    window.open(`/freelancer/profile/${userId}`, "_self");
 }
 
 fetch(`/api/tasks/${service}`)
