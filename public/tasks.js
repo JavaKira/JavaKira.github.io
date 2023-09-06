@@ -3,6 +3,8 @@ const container = document.getElementById("container");
 const tg = window.Telegram.WebApp;
 const service = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
 
+serviceHint.innerText = service;
+
 tg.expand();
 tg.BackButton.show();
 tg.BackButton.onClick(() => {
