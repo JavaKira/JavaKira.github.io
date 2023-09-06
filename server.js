@@ -29,7 +29,7 @@ routes.forEach(route => {
 });
 
 app.get("/tasks/:call_data", (req, res) => {
-    res.sendFile(__dirname + "/public/tasks.html");
+    res.sendFile(__dirname + "/public/freelancer/tasks.html");
 });
 
 app.get("/api/user/:id", (req, res) => {
