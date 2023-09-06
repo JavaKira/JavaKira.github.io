@@ -6,7 +6,8 @@ const profileCityHint = document.getElementById("profileCity");
 const profileDescriptionText = document.getElementById("profileDescription");
 const ongoingExecuteOrdersText = document.getElementById("ongoingExecuteOrders");
 const executedOrdersText = document.getElementById("executedOrders");
-const userId = decodeURIComponent(window.location.href.substring(window.location.href.lastIndexOf('/') + 1));
+const userId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+console.log(userId);
 
 tg.expand();
 tg.BackButton.show();
@@ -45,6 +46,9 @@ function setUser(user) {
 fetch("api/user/" + userId)
     .then(res => {
         if (res.status === 200) {
-            res.json().then(user => setUser(user))
+            res.json().then(user => {
+                console.log(user);
+                setUser(user);
+            })
         }
     });
