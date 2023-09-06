@@ -43,7 +43,7 @@ function setUser(user) {
     )
 }
 
-fetch("api/user/" + userId)
+fetch("/api/user/" + userId)
     .then(res => {
         if (res.status === 200) {
             res.json().then(user => {

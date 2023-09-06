@@ -41,7 +41,7 @@ function setUser(user) {
         )
 }
 
-fetch("api/user/" + tg.initDataUnsafe.user.id)
+fetch("/api/user/" + tg.initDataUnsafe.user.id)
     .then(res => {
         if (res.status === 200) {
             res.json().then(user => setUser(user))
