@@ -36,6 +36,14 @@ app.get("/freelancer/profile/:id", (req, res) => {
     res.sendFile(__dirname + "/public/freelancer/otherProfile.html");
 });
 
+app.get("/freelancer/taskForm/:id", (req, res) => {
+    res.sendFile(__dirname + "/public/freelancer/taskForm.html");
+});
+
+app.post("/freelancer/taskForm/:id", (req, res) => {
+    res.status(200).end();
+});
+
 app.get("/api/user/:id", (req, res) => {
     const id = req.params.id;
     db.getUser(id).then(result => {
