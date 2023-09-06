@@ -6,7 +6,7 @@ const profileCityHint = document.getElementById("profileCity");
 const profileDescriptionText = document.getElementById("profileDescription");
 const ongoingExecuteOrdersText = document.getElementById("ongoingExecuteOrders");
 const executedOrdersText = document.getElementById("executedOrders");
-const userId = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+const userId = decodeURIComponent(window.location.href.substring(window.location.href.lastIndexOf('/') + 1));
 
 tg.expand();
 tg.BackButton.show();
