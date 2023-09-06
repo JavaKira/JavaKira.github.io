@@ -8,16 +8,28 @@ const app = express();
 
 app.use(express.static("public"));
 
-let routes = ["/profile", "/about", "/customer", "/customerProfile", "/form", "/freelancer", "/freelancerProfile", "/orders", "/services"];
+let routes = ["/profile", "/about", "/customer/customerProfile", "/form", "/freelancer/freelancerProfile", "/freelancer/services"];
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
+});
+
+app.get("/customer", (req, res) => {
+    res.sendFile(__dirname + "/public/customer/customer.html");
+});
+
+app.get("/freelancer", (req, res) => {
+    res.sendFile(__dirname + "/public/freelancer/freelancer.html");
 });
 
 routes.forEach(route => {
     app.get(route, (req, res) => {
         res.sendFile(__dirname + "/public" + route + ".html");
     })
+});
+
+app.get("/tasks/:call_data", (req, res) => {
+    res.sendFile(__dirname + "/public/tasks.html");
 });
 
 app.get("/api/user/:id", (req, res) => {
@@ -27,11 +39,6 @@ app.get("/api/user/:id", (req, res) => {
     }).catch(err => {
         res.status(400).send(err.message);
     })
-});
-
-app.get("/tasks/:call_data", (req, res) => {
-    const call_data = req.params.call_data;
-    res.sendFile(__dirname + "/public/tasks.html");
 });
 
 app.get("/api/tasks/:service_name", (req, res) => {

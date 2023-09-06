@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../style.css" media="screen" />
 </head>
 <body>
     <h1 class="text">Профиль</h1>
     <p class="hint"><span id="userName">Имя пользователя</span>, вы авторизовались в меню исполнителя. Тут вы сможете: взять заказ и просмотреть ваши заказы в работе, с возможностью закрыть их.</p>
     <br>
-    <form action="/services">
+    <form action="/freelancer/services">
         <input class="button" type="submit" value="Взять заказ" />
     </form>
     <br>
-    <form action="/freelancerProfile">
+    <form action="/freelancer/freelancerProfile">
         <input class="button" type="submit" value="Профиль исполнителя" />
     </form>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="profile.js"></script>
+    <script src="../profile.js"></script>
 </body>
 </html>
