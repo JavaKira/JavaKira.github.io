@@ -19,7 +19,7 @@ function insertService(service) {
 }
 
 function redirect2ServicePage(service_name) {
-    window.open(`/tasks/${service_name}`, "_self");
+    window.open(`/freelancer/tasks/${service_name}`, "_self");
 }
 
 fetch("/api/services")

@@ -18,12 +18,16 @@ function insertTasks(task) {
                                 <p class="hint">${task.body_task}</p>
                                 <p class="hint">Срок: ${task.time_task}</p>
                                 <p class="hint">Вознаграждение: ${task.price_task}</p>
-                                <button class="button">Отозваться</button>
+                                <button class="button" onclick="openProfile('${task.user_id}')">Отозваться</button>
                                 <br>
                                 <button class="button">Профиль заказчика</button>
                               </div>
                               <br>`
     )
+}
+
+function openProfile(userId) {
+    window.open(`/freelancer/tasks/${service_name}`, "_self");
 }
 
 fetch(`/api/tasks/${service}`)

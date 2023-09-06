@@ -28,8 +28,12 @@ routes.forEach(route => {
     })
 });
 
-app.get("/tasks/:call_data", (req, res) => {
+app.get("/freelancer/tasks/:call_data", (req, res) => {
     res.sendFile(__dirname + "/public/freelancer/tasks.html");
+});
+
+app.get("/freelancer/profile/:id", (req, res) => {
+    res.sendFile(__dirname + "/public/freelancer/otherProfile.html");
 });
 
 app.get("/api/user/:id", (req, res) => {
