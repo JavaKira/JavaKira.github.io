@@ -33,7 +33,7 @@ function setForm(avatarUrl,
 
 function setUser(user) {
     setForm(
-        `api/file/${user.prof_photo_id}`,
+        `/api/file/${user.prof_photo_id}`,
         user.tg_full_name,
         user.city,
         user.age,
